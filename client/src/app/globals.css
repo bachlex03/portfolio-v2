@@ -4,7 +4,11 @@
 
 @layer base {
   /* Your custom base styles... */
+  :root {
+    --secondary-color: #64ffda;
+  }
   body {
-    @apply bg-primary text-white;
+    @apply font-jetBrainsMono bg-primary text-white;
+    -webkit-font-smoothing: antialiased;
   }
 }

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import styles from "./main.module.css";
-import clsx from "clsx";
-import Header from "~/components/Header";
-import { spaceMono } from "~/fonts/font.config";
+import Header from "~/components/Header/Header";
+import { jetBrainsMono } from "~/fonts/font.config";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,12 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
-        <div className="">
-          <Header />
-          {/* <div className={.content}></div> */}
-          {children}
-        </div>
+      <body className={jetBrainsMono.variable}>
+        <Header />
+        {children}
       </body>
     </html>
   );
