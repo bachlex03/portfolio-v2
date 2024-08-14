@@ -8,6 +8,7 @@ const config = {
   theme: {
     container: {
       center: true,
+      padding: '15px',
       screens: {
         sm: '640px',
         md: '768px',
@@ -25,6 +26,8 @@ const config = {
       colors: {
         primary: '#0a192f',
         secondary: '#64ffda',
+        third: '#ccd6f6',
+        four: '#8892b0',
         'header-text': '#ccd6f6',
       },
       fontFamily: {
