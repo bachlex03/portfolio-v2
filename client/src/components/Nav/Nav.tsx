@@ -40,7 +40,7 @@ const Nav = () => {
           );
         })}
         <li className={clsx(styles.btnComponent)}>
-          <Button className="ml-3 text-sm">Resume</Button>
+          <Button className="ml-3 text-sm text-secondary">Resume</Button>
         </li>
       </ul>
     </nav>

@@ -7,22 +7,27 @@ import { SFmono } from '~/fonts/font.config';
 
 const icons = [
   {
+    name: 'Github',
     icon: <FaGithub />,
     path: 'https://github.com/bachlex03?tab=repositories',
   },
   {
+    name: 'Linkedin',
     icon: <FaLinkedinIn />,
     path: 'https://www.linkedin.com/in/lxbach1608/',
   },
   {
+    name: 'Facebook',
     icon: <FaFacebook />,
     path: 'https://www.facebook.com/bale1608',
   },
   {
+    name: 'Instagram',
     icon: <FiInstagram />,
     path: '',
   },
   {
+    name: 'Twitter',
     icon: <FaTwitter />,
     path: '',
   },
@@ -35,7 +40,12 @@ const AsideSocial = ({ email = 'lxbachit03.working@gmail.com' }) => {
         <div className={clsx(styles.line, 'hidden xl:flex xl:flex-col justify-center items-center text-four')}>
           {icons.map((item, index) => {
             return (
-              <Link key={index} href={item.path} target="_blank" className="p-[10px] text-xl hover:text-secondary hover:translate-x-2 transition duration-700">
+              <Link
+                key={index}
+                href={item.path}
+                target="_blank"
+                className="p-[10px] text-2xl hover:text-secondary hover:translate-x-2 transition duration-700"
+              >
                 {item.icon}
               </Link>
             );

@@ -1,5 +1,5 @@
+import '~/styles/globals.css';
 import type { Metadata } from 'next';
-import './globals.css';
 import Header from '~/components/Header/Header';
 import { jetBrainsMono } from '~/fonts/font.config';
 import PageTransition from '~/components/transitions/TransitionPage';

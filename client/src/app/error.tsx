@@ -1,12 +1,6 @@
-"use client";
+'use client';
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+export default function Error({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div>
       <h1>Error</h1>
