@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 const Photo = () => {
   return (
-    <div className="relative">
-      <div className="w-[350px] h-[350px]">
+    <div className="relative left-[16px] xl:left-[35px]">
+      <div className="w-[300px] h-[300px] xl:w-[350px] xl:h-[350px] relative left-[35px]">
         <Image src="/assets/images/avt3.png" priority fill quality={100} alt="avatar" className="object-cover rounded-full" />
       </div>
 
@@ -13,12 +13,12 @@ const Photo = () => {
         fill="transparent"
         viewBox="0 0 400 400"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute xl:top-[-11px] xl:left-[-10px] w-[370px] h-[370px]"
+        className="absolute top-[-35px] w-[370px] h-[370px] xl:w-[420px] xl:h-[420px]"
       >
         <motion.circle
           cx="50%"
           cy="50%"
-          r="195"
+          r="175"
           stroke="#64ffda"
           strokeWidth="4"
           strokeLinecap="round"
