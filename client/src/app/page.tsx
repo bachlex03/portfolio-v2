@@ -8,6 +8,7 @@ import { SocialList } from '~/components/Social';
 import { cn } from '~/lib/utils';
 import Photo from '~/components/Photo/Photo';
 import HomeTabs from '~/components/Tab-content/HomeTabs';
+import Stats from '~/components/Stats/Stats';
 
 export default function Home() {
    return (
@@ -64,6 +65,8 @@ export default function Home() {
                   <span className="font-SFmono text-sm">check out my cv/portfolio</span>
                   <FiDownload className="inline-block text-xl ml-2" />
                </Button>
+
+               <Stats />
             </div>
          </section>
 
@@ -88,10 +91,10 @@ export default function Home() {
                      <p className="xl:block font-calibre text-[21px] text-four mb-[15px] leading-[32px] text-left">
                         Fast-forward to today, I'm a dedicated student currently enrolled at the Ho
                         Chi Minh City University of Technology and Education (HCMUTE).{' '}
-                        <span className="hidden xl:inline-block">
+                        <span className="hidden xl:inline">
                            My academic journey at HCMUTE has been a remarkable experience filled
                            with learning, growth, and exciting challenges.
-                        </span>{' '}
+                        </span>
                         As I pursue my education in this esteemed institution, I am passionate about
                         Information and Technology and continually strive to expand my knowledge and
                         contribute to my field. I look forward to sharing my academic and personal
