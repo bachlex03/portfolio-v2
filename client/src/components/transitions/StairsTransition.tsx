@@ -10,7 +10,7 @@ const StairsTransition = () => {
       <>
          <AnimatePresence mode="wait">
             <div key={pathname}>
-               <div className="w-screen h-screen fixed top-0 left-0 right-0 pointer-events-none flex z-40">
+               <div className="fixed top-0 left-0 right-0 z-50 flex w-screen h-screen pointer-events-none">
                   <Stairs />
                </div>
                <motion.div
@@ -23,7 +23,7 @@ const StairsTransition = () => {
                         ease: 'easeInOut',
                      },
                   }}
-                  className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
+                  className="fixed top-0 w-screen h-screen pointer-events-none bg-primary"
                />
             </div>
          </AnimatePresence>

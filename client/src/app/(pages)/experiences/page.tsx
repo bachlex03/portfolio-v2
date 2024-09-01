@@ -20,7 +20,14 @@ import { cn } from '~/lib/utils';
 import { calibreFont } from '~/fonts/font.config';
 import { BsArrowDownRight } from 'react-icons/bs';
 import Link from 'next/link';
-import { RefObject, useEffect, useRef } from 'react';
+import {
+   createRef,
+   LegacyRef,
+   MouseEventHandler,
+   RefObject,
+   useEffect,
+   useRef,
+} from 'react';
 
 // about data
 const about = [
@@ -189,6 +196,8 @@ const skills = [
    },
 ];
 
+const navItems = ['top', 'Experience', 'Projects'];
+
 // projects data
 
 const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
@@ -220,11 +229,36 @@ const Page = () => {
 
    const [mouseX, mouseY] = useRelativeMousePosition(screenRef);
 
+   const navRefs = useRef<Array<HTMLElement | null>>([]);
+   const experienceRefs = useRef<Array<HTMLElement | null>>([]);
+
+   const handleActiveNav: MouseEventHandler = (event) => {
+      console.log(navRefs.current);
+
+      navRefs.current.forEach((ref) => {
+         if (ref) {
+            ref.classList.remove('active');
+         }
+      });
+
+      event.currentTarget.classList.add('active');
+   };
+
+   const handleActiveExperience: MouseEventHandler = (event) => {
+      experienceRefs.current.forEach((ref) => {
+         if (ref) {
+            ref.classList.add('inactive');
+         }
+      });
+
+      event.currentTarget.classList.remove('inactive');
+   };
+
    const maskImage = useMotionTemplate`radial-gradient(300px at ${mouseX}px ${mouseY}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
    return (
-      <div>
+      <div id="top">
          <motion.div
-            className="fixed inset-0 top-0 left-0 w-screen h-screen pointer-events-none bg-slate-500"
+            className="fixed inset-0 top-0 left-0 w-screen h-screen pointer-events-none bg-sky-700"
             ref={screenRef}
             style={{ maskImage }}
          ></motion.div>
@@ -251,44 +285,39 @@ const Page = () => {
                   </p>
                   <nav className="mt-7">
                      <ul className="text-sm">
-                        <li className="py-3">
-                           <a
-                              href="#about"
-                              className="flex items-center uppercase group active"
-                           >
-                              <span className="inline-block w-10 h-px mr-4 transition-all duration-200 nav-indicator bg-slate-200/60 group-hover:bg-slate-200 group-hover:w-16"></span>
-                              <span className="tracking-widest transition-all nav-text group-hover:font-bold text-slate-200/80 group-hover:text-slate-200">
-                                 About
-                              </span>
-                           </a>
-                        </li>
-                        <li className="py-3">
-                           <a
-                              href="#about"
-                              className="flex items-center uppercase group "
-                           >
-                              <span className="inline-block w-10 h-px mr-4 transition-all duration-200 nav-indicator bg-slate-200/60 group-hover:bg-slate-200 group-hover:w-16"></span>
-                              <span className="tracking-widest transition-all nav-text group-hover:font-bold text-slate-200/80 group-hover:text-slate-200">
-                                 Experience
-                              </span>
-                           </a>
-                        </li>
-                        <li className="py-3">
-                           <a
-                              href="#about"
-                              className="flex items-center uppercase group "
-                           >
-                              <span className="inline-block w-10 h-px mr-4 transition-all duration-200 nav-indicator bg-slate-200/60 group-hover:bg-slate-200 group-hover:w-16"></span>
-                              <span className="tracking-widest transition-all nav-text group-hover:font-bold text-slate-200/80 group-hover:text-slate-200">
-                                 Projects
-                              </span>
-                           </a>
-                        </li>
+                        {navItems.map((item, index) => {
+                           return (
+                              <li
+                                 key={index}
+                                 className="py-3"
+                                 ref={(el) => {
+                                    navRefs.current.push(el);
+                                 }}
+                                 data-nav={index}
+                                 onClick={handleActiveNav}
+                              >
+                                 <a
+                                    href={
+                                       item === 'top'
+                                          ? `#top`
+                                          : `#${item.toLowerCase()}`
+                                    }
+                                    className="flex items-center uppercase group"
+                                 >
+                                    <span className="inline-block w-10 h-px mr-4 transition-all duration-200 nav-indicator bg-slate-200/60 group-hover:bg-slate-200 group-hover:w-16"></span>
+                                    <span className="tracking-widest transition-all nav-text group-hover:font-bold text-slate-200/80 group-hover:text-slate-200">
+                                       {item === 'top' ? `About` : `${item}`}
+                                    </span>
+                                 </a>
+                              </li>
+                           );
+                        })}
                      </ul>
                   </nav>
                </div>
                <div className="flex-1">
-                  <section id="#about" className="mb-24">
+                  {/* About */}
+                  <section id="top" className="">
                      <div className="flex flex-col items-center">
                         <p className="text-3xl font-bold">About me</p>
                         <p className="text-base text-center text-four font-[700] leading-6 py-5 ma">
@@ -314,14 +343,31 @@ const Page = () => {
                         ))}
                      </ul>
                   </section>
-                  <section id="#experience">
+
+                  {/* Experience */}
+                  <section id="experience">
+                     <div className="pb-[96px]"></div>
                      {experiences.map((experience, index) => {
                         return (
-                           <div key={index} className="grid grid-cols-8 py-5">
-                              <div className="flex-1 col-span-2 uppercase text-[13px] text-four font-bold">
+                           <div
+                              key={index}
+                              className="grid grid-cols-8 py-5"
+                              ref={(el) => {
+                                 experienceRefs.current.push(el);
+                              }}
+                              onMouseOver={handleActiveExperience}
+                              onMouseLeave={() => {
+                                 experienceRefs.current.forEach((ref) => {
+                                    if (ref) {
+                                       ref.classList.remove('inactive');
+                                    }
+                                 });
+                              }}
+                           >
+                              <div className="experience flex-1 col-span-2 uppercase text-[13px] text-four font-bold">
                                  {experience.duration}
                               </div>
-                              <div className="flex-1 col-span-6 group">
+                              <div className="flex-1 col-span-6 experience group">
                                  <Link
                                     href="/"
                                     className="text-[14px] font-bold block mb-3 group-hover:text-teal-300 transition-all duration-200"
