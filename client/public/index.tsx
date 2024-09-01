@@ -1,5 +1,5 @@
 const images = {
-  logo: './logo.svg',
+   logo: './logo.svg',
 };
 
 export default images;

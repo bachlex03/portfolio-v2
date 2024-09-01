@@ -1,10 +1,10 @@
 export default function LayoutPageGroup1({
-  children,
+   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <div>
-      <h1>Layout Page group 1</h1>
-      {children}
-    </div>
-  );
+   return (
+      <div>
+         <h1>Layout Page group 1</h1>
+         {children}
+      </div>
+   );
 }

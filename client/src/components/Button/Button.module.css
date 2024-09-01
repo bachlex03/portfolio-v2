@@ -1,13 +1,13 @@
 .wrapper {
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .wrapper:hover {
-  box-shadow: 3px 3px 0 0 var(--secondary-color);
-  transform: translate(-4px, -4px);
+   box-shadow: 3px 3px 0 0 var(--secondary-color);
+   transform: translate(-4px, -4px);
 }
 
 .wrapper:active {
-  box-shadow: 2 2 0 0 var(--secondary-color);
-  transform: translate(0px, 0px);
+   box-shadow: 2 2 0 0 var(--secondary-color);
+   transform: translate(0px, 0px);
 }

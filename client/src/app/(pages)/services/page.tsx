@@ -38,11 +38,14 @@ const services = [
 const ServicePage = () => {
    return (
       <section className="min-h-[99vh] flex flex-col justify-end md:justify-center pt-5 xl:py-0">
-         <div className="container mx-auto">
+         <div className="container mx-auto ">
             <motion.div
                initial={{ opacity: 0 }}
-               animate={{ opacity: 1, transition: { delay: 1.4, duration: 0.4, ease: 'easeIn' } }}
-               className="grid grid-cols-1 md:grid-cols-2 gap-[30px]"
+               animate={{
+                  opacity: 1,
+                  transition: { delay: 1.4, duration: 0.4, ease: 'easeIn' },
+               }}
+               className="grid  md:grid-cols-2 gap-[30px]"
             >
                {services.map((service, index) => {
                   return (
@@ -50,8 +53,8 @@ const ServicePage = () => {
                         key={index}
                         className="flex flex-col border-b border-four/50 pb-[25px] gap-[15px] group"
                      >
-                        <div className="flex justify-between items-center">
-                           <span className="text-3xl group-hover:text-secondary transition-all duration-500">
+                        <div className="flex items-center justify-between">
+                           <span className="text-3xl transition-all duration-500 group-hover:text-secondary">
                               0{service.num}
                            </span>
                            <Link

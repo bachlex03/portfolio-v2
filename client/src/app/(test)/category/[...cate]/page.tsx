@@ -1,13 +1,13 @@
 export default function CategoryPage({
-  params,
+   params,
 }: {
-  params: { cate: string[] };
+   params: { cate: string[] };
 }) {
-  console.log(params);
+   console.log(params);
 
-  return (
-    <div>
-      <h1>Category Page</h1>
-    </div>
-  );
+   return (
+      <div>
+         <h1>Category Page</h1>
+      </div>
+   );
 }

@@ -33,7 +33,8 @@ const HomeTabs = () => {
                   </TabsList>
                   <TabsContent value="early" className="text-center">
                      <div className="py-3 xl:py-0 xl:pb-3 xl:text-left xl:text-[20px]">
-                        Lead Enginear <span className="text-secondary">@Upstatement</span>
+                        Lead Enginear{' '}
+                        <span className="text-secondary">@Upstatement</span>
                      </div>
                      <span
                         className={cn(
@@ -46,24 +47,27 @@ const HomeTabs = () => {
 
                      <div className={cn(calibreFont.variable)}>
                         <p className="relative text-left pl-6 font-calibre text-four font-thin text-[20px] mt-5 leading-[1.4] before:content-['▹'] before:text-secondary before:text-[16px] before:absolute before:left-0">
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-                           excepturi consequatur provident quae labore porro nisi deserunt quasi
-                           consequuntur ipsam!
+                           Lorem ipsum dolor sit amet consectetur adipisicing
+                           elit. Voluptatibus excepturi consequatur provident
+                           quae labore porro nisi deserunt quasi consequuntur
+                           ipsam!
                         </p>
 
                         <p className="relative text-left pl-6 font-calibre text-four font-thin text-[20px] mt-5 leading-[1.4] before:content-['▹'] before:text-secondary before:text-[16px] before:absolute before:left-0">
-                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellat
-                           molestiae inventore voluptates corrupti minus officiis explicabo a quam
-                           unde, autem iste fugiat! Velit error laborum eligendi blanditiis aut ad
-                           ipsa aspernatur dolore explicabo veritatis eaque quibusdam, adipisci fuga
-                           maxime?
+                           Lorem ipsum dolor sit amet, consectetur adipisicing
+                           elit. Illum repellat molestiae inventore voluptates
+                           corrupti minus officiis explicabo a quam unde, autem
+                           iste fugiat! Velit error laborum eligendi blanditiis
+                           aut ad ipsa aspernatur dolore explicabo veritatis
+                           eaque quibusdam, adipisci fuga maxime?
                         </p>
                      </div>
                   </TabsContent>
 
                   <TabsContent value="freelancer" className="text-center">
                      <div className="py-3 xl:py-0 xl:pb-3 xl:text-left xl:text-[20px]">
-                        Lead Enginear <span className="text-secondary">@Upstatement</span>
+                        Lead Enginear{' '}
+                        <span className="text-secondary">@Upstatement</span>
                      </div>
                      <span
                         className={cn(
@@ -76,24 +80,27 @@ const HomeTabs = () => {
 
                      <div className={cn(calibreFont.variable)}>
                         <p className="relative text-left pl-6 font-calibre text-four font-thin text-[20px] mt-5 leading-[1.4] before:content-['▹'] before:text-secondary before:text-[16px] before:absolute before:left-0">
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-                           excepturi consequatur provident quae labore porro nisi deserunt quasi
-                           consequuntur ipsam!
+                           Lorem ipsum dolor sit amet consectetur adipisicing
+                           elit. Voluptatibus excepturi consequatur provident
+                           quae labore porro nisi deserunt quasi consequuntur
+                           ipsam!
                         </p>
 
                         <p className="relative text-left pl-6 font-calibre text-four font-thin text-[20px] mt-5 leading-[1.4] before:content-['▹'] before:text-secondary before:text-[16px] before:absolute before:left-0">
-                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repellat
-                           molestiae inventore voluptates corrupti minus officiis explicabo a quam
-                           unde, autem iste fugiat! Velit error laborum eligendi blanditiis aut ad
-                           ipsa aspernatur dolore explicabo veritatis eaque quibusdam, adipisci fuga
-                           maxime?
+                           Lorem ipsum dolor sit amet, consectetur adipisicing
+                           elit. Illum repellat molestiae inventore voluptates
+                           corrupti minus officiis explicabo a quam unde, autem
+                           iste fugiat! Velit error laborum eligendi blanditiis
+                           aut ad ipsa aspernatur dolore explicabo veritatis
+                           eaque quibusdam, adipisci fuga maxime?
                         </p>
                      </div>
                   </TabsContent>
 
                   <TabsContent value="HCMUTE" className="text-center">
                      <div className="py-3 xl:py-0 xl:pb-3 xl:text-left xl:text-[20px]">
-                        Lead Enginear <span className="text-secondary">@Upstatement</span>
+                        Lead Enginear{' '}
+                        <span className="text-secondary">@Upstatement</span>
                      </div>
                      <span
                         className={cn(
@@ -106,9 +113,10 @@ const HomeTabs = () => {
 
                      <div className={cn(calibreFont.variable)}>
                         <p className="relative text-left pl-6 font-calibre text-four font-thin text-[20px] mt-5 leading-[1.4] before:content-['▹'] before:text-secondary before:text-[16px] before:absolute before:left-0">
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-                           excepturi consequatur provident quae labore porro nisi deserunt quasi
-                           consequuntur ipsam!
+                           Lorem ipsum dolor sit amet consectetur adipisicing
+                           elit. Voluptatibus excepturi consequatur provident
+                           quae labore porro nisi deserunt quasi consequuntur
+                           ipsam!
                         </p>
                      </div>
                   </TabsContent>

@@ -31,7 +31,12 @@ export default function Home() {
                   'xl:block xl:ml-[100px]',
                )}
             >
-               <span className={clsx(SFmono.variable, 'font-SFmono text-secondary')}>
+               <span
+                  className={clsx(
+                     SFmono.variable,
+                     'font-SFmono text-secondary',
+                  )}
+               >
                   Hi, my name is
                </span>
                <h1
@@ -41,7 +46,9 @@ export default function Home() {
                   )}
                >
                   Le Xuan Bach, <br />
-                  <span className="text-four block leading-tight">I build things for the web.</span>
+                  <span className="block leading-tight text-four">
+                     I build things for the web.
+                  </span>
                </h1>
                <p
                   className={clsx(
@@ -49,8 +56,12 @@ export default function Home() {
                      'xl:w-[540px] xl:text-left',
                   )}
                >
-                  I’m a <span className="text-secondary">passionate software engineer </span>
-                  specializing in building exceptional digital experiences. Currently, i'm{' '}
+                  I’m a{' '}
+                  <span className="text-secondary">
+                     passionate software engineer{' '}
+                  </span>
+                  specializing in building exceptional digital experiences.
+                  Currently, i'm{' '}
                   <span className="hidden xl:inline-block">
                      focused on building product and
                   </span>{' '}
@@ -62,8 +73,10 @@ export default function Home() {
                </div>
                {/* download button */}
                <Button className="text-secondary items-baseline leading-[28px] mt-5 xl:w-fit">
-                  <span className="font-SFmono text-sm">check out my cv/portfolio</span>
-                  <FiDownload className="inline-block text-xl ml-2" />
+                  <span className="text-sm font-SFmono">
+                     check out my cv/portfolio
+                  </span>
+                  <FiDownload className="inline-block ml-2 text-xl" />
                </Button>
 
                <Stats />
@@ -71,38 +84,48 @@ export default function Home() {
          </section>
 
          {/* About */}
-         <section id="about" className={cn(calibreFont.variable, 'min-h-screen')}>
+         <section
+            id="about"
+            className={cn(calibreFont.variable, 'min-h-screen')}
+         >
             <div className="container mx-auto px-[36px]">
                <h1 className="home-title xl:after:w-[300px] font-calibre text-[24px] xl:text-[32px] font-[600] text-third">
                   About me
                </h1>
-               <div className="flex flex-col-reverse xl:flex-row mt-[50px]">
+               <div className="flex xl:flex-row mt-[50px] flex-col-reverse">
                   <div className="flex-1 xl:max-w-[550px] max-w-[600px]">
                      <p className="mt-[36px] xl:mt-0 xl:block font-calibre text-[21px] text-four mb-[15px] leading-[32px] text-left">
-                        Hello! My full name is <span className="text-secondary">Le Xuan Bach</span>,
+                        Hello! My full name is{' '}
+                        <span className="text-secondary">Le Xuan Bach</span>,
                         you can call me <span className="italic">"Bale"</span>
                         <span className="hidden xl:inline-block">
                            . I enjoy creating things that live on the internet
                         </span>
-                        . My interest in web development started back in 2020 when I decided to try
-                        creating something that make a valuable product for society.
+                        . My interest in web development started back in 2020
+                        when I decided to try creating something that make a
+                        valuable product for society.
                      </p>
 
                      <p className="xl:block font-calibre text-[21px] text-four mb-[15px] leading-[32px] text-left">
-                        Fast-forward to today, I'm a dedicated student currently enrolled at the Ho
-                        Chi Minh City University of Technology and Education (HCMUTE).{' '}
+                        Fast-forward to today, I'm a dedicated student currently
+                        enrolled at the Ho Chi Minh City University of
+                        Technology and Education (HCMUTE).{' '}
                         <span className="hidden xl:inline">
-                           My academic journey at HCMUTE has been a remarkable experience filled
-                           with learning, growth, and exciting challenges.
+                           My academic journey at HCMUTE has been a remarkable
+                           experience filled with learning, growth, and exciting
+                           challenges.
                         </span>
-                        As I pursue my education in this esteemed institution, I am passionate about
-                        Information and Technology and continually strive to expand my knowledge and
-                        contribute to my field. I look forward to sharing my academic and personal
-                        experiences with you as I continue on this educational adventure at HCMUTE.
+                        As I pursue my education in this esteemed institution, I
+                        am passionate about Information and Technology and
+                        continually strive to expand my knowledge and contribute
+                        to my field. I look forward to sharing my academic and
+                        personal experiences with you as I continue on this
+                        educational adventure at HCMUTE.
                      </p>
 
                      <p className="xl:block font-calibre text-[22px] text-four mb-[15px] leading-[32px]">
-                        Here are a few technologies I’ve been working with recently:
+                        Here are a few technologies I’ve been working with
+                        recently:
                      </p>
 
                      <ul className="grid font-SFmono text-[12px] xl:text-[14px] text-four mb-[15px] leading-[32px] grid-cols-2">
@@ -140,7 +163,10 @@ export default function Home() {
          </section>
 
          {/* Working */}
-         <section id="working" className={cn(calibreFont.variable, 'min-h-screen mt-20')}>
+         <section
+            id="working"
+            className={cn(calibreFont.variable, 'min-h-screen mt-20')}
+         >
             <div className="container mx-auto xl:px-[150px]">
                <h1 className="home-title xl:after:w-[300px] font-calibre text-[24px] xl:text-[32px] font-[600] text-third">
                   Where i've Worked
