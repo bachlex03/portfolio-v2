@@ -14,7 +14,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
                opacity: 0,
                transition: { delay: 0.6, duration: 0.3, ease: 'easeInOut' },
             }}
-            className="h-screen w-screen bg-primary fixed top-0 pointer-events-none"
+            className="fixed top-0 w-screen h-screen pointer-events-none bg-primary"
          />
          {children}
       </AnimatePresence>
