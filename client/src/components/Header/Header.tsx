@@ -57,19 +57,17 @@ export default function Header() {
    return (
       <header
          className={cn(
-            'fixed top-0 left-0 right-0 z-40 backdrop-blur transition-all',
-            classes.includes('top') && 'backdrop-blur-none',
+            'fixed top-0 left-0 right-0 z-40 backdrop-blur transition-all opacity-100',
+            classes.includes('top') && 'backdrop-blur-[0]',
             classes.includes('show') && 'w-full',
             classes.includes('hide') &&
-               'w-[calc(100%-40px)] -translate-y-20 scale-75  transition-all duration-500',
+               'w-[calc(100%-40px)] -translate-y-20 scale-75  transition-all duration-500 opacity-50',
          )}
       >
          <div
             className={cn(
                'container xl:max-w-full xl:px-20 h-20 flex items-center shadow-[0_10px_30px_-10px_rgba(2,12,27,.7)] backdrop-blur-sm transition-all',
                classes.includes('top') && 'shadow-sm backdrop-blur-[0]',
-               // classes.includes('show') && 'top-0',
-               // classes.includes('hide') && 'top-[-100%]',
             )}
          >
             <div
