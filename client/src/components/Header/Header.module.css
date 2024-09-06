@@ -9,3 +9,13 @@
    margin-right: 5px;
    color: var(--secondary-color);
 }
+
+.hide {
+   display: none;
+}
+
+.show {
+}
+
+.top {
+}
