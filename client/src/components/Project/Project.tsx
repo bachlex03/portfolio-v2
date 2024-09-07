@@ -3,7 +3,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import Link from 'next/link';
+import { cn } from '~/lib/utils';
+import { SFmono } from '~/fonts/font.config';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import NextVideo from 'next-video';
+import Vid from '../../../videos/Screen Recording 2024-09-03 at 13.15.15.mov';
 
 const projects = [
    {
@@ -75,14 +81,35 @@ const projects = [
 const Project = () => {
    const isOdd = (num: number) => num % 2 === 0;
 
+   const videoRef = useRef<HTMLVideoElement>(null);
+
    return (
-      <div className="w-full">
+      <div className="w-full flex flex-col gap-7">
+         {/* <NextVideo src={Vid} /> */}
+
          {projects.map((project, index) => {
             return (
                <div key={index} className="flex odd:flex-row even:flex-row-reverse mt-[50px]">
                   {/* Images */}
                   <div className="w-[60%]">
-                     <Swiper spaceBetween={30} slidesPerView={1}>
+                     <Swiper
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        onSlideChange={() => {
+                           videoRef.current?.pause();
+                        }}
+                     >
+                        <SwiperSlide key={index}>
+                           <div className="relative h-[360px]">
+                              <div className="relative w-full h-full">
+                                 <NextVideo
+                                    src={Vid}
+                                    className="object-cover rounded-[4px] z-10"
+                                    ref={videoRef}
+                                 />
+                              </div>
+                           </div>
+                        </SwiperSlide>
                         {project.images.map((image, index) => {
                            return (
                               <SwiperSlide key={index}>
@@ -108,18 +135,35 @@ const Project = () => {
                         isOdd(index) ? 'justify-start items-end' : 'justify-start items-start'
                      } w-[40%]`}
                   >
-                     <span>Featured Project</span>
-                     <h3>Project title</h3>
-                     <div>content</div>
-                     <ul className="flex">
+                     <span className="text-secondary text-sm">Featured Project</span>
+                     <h3 className="font-bold text-[28px] mt-1">
+                        <Link href="#" target="_blank">
+                           Halcyon Theme
+                        </Link>
+                     </h3>
+                     <p
+                        className={`relative z-50 mt-5 min-w-[496px] bg-[#112240] p-[25px] rounded font-calibre text-third text-lg ${
+                           isOdd(index) ? 'text-right' : 'text-left'
+                        }`}
+                     >
+                        A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.
+                        Available on Visual Studio Marketplace, Package Control, Atom Package
+                        Manager, and npm.
+                     </p>
+                     <ul
+                        className={cn(
+                           SFmono.variable,
+                           'flex gap-4 font-SFmono text-sm text-third mt-5 flex-wrap',
+                        )}
+                     >
                         <li>HTML 5</li>
                         <li>CSS 3</li>
-                        <li>ReactJs</li>
-                        <li>NextJs</li>
+                        <li>React.js</li>
+                        <li>Next.js</li>
                      </ul>
-                     <div className="flex">
-                        <span>icon 1</span>
-                        <span>icon 2</span>
+                     <div className="flex mt-5 text-third gap-5 text-xl">
+                        <FiGithub />
+                        <FiExternalLink />
                      </div>
                   </div>
                </div>
