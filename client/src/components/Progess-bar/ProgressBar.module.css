@@ -1,0 +1,4 @@
+.progress-bar {
+   background: -webkit-linear-gradient(45deg, #5ebbff -33%, #a174ff 69%);
+   transform-origin: 0%;
+}

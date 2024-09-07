@@ -52,9 +52,9 @@ const Contact = () => {
          <section className="container flex items-center justify-center mt-[calc(var(--header-height)+30px)] mb-10">
             <div
                id="content"
-               className="flex flex-col xl:flex-row items-center justify-center gap-2 md:gap-16"
+               className="flex flex-col xl:flex-row items-center justify-center gap-10 md:gap-16"
             >
-               <div className="form-wrapper flex-1 bg-[#050a13] p-10 rounded-lg flex gap-6 flex-col">
+               <div className="form-wrapper flex-1 bg-[#050a13] px-10 py-5 rounded-lg flex gap-6 flex-col">
                   <h3 className="text-secondary text-4xl py-5 text-left">
                      Let's Work together
                   </h3>

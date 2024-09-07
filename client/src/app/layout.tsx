@@ -4,6 +4,7 @@ import Header from '~/components/Header/Header';
 import { jetBrainsMono } from '~/fonts/font.config';
 import PageTransition from '~/components/transitions/TransitionPage';
 import StairsTransition from '~/components/transitions/StairsTransition';
+import ProgressBar from '~/components/Progess-bar/ProgressBar';
 
 export const metadata: Metadata = {
    title: 'Create Next App',
@@ -18,6 +19,7 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={jetBrainsMono.variable}>
+            <ProgressBar />
             <Header />
             <StairsTransition />
             <PageTransition>{children}</PageTransition>
