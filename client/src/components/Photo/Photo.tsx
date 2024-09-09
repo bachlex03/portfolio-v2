@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Photo = () => {
    return (
-      <div className="relative left-[16px] xl:left-[35px]">
+      <div className="relative left-[-50px]">
          <div className="w-[300px] h-[300px] xl:w-[350px] xl:h-[350px] relative left-[35px]">
             <Image
                src="/assets/images/avt3.png"

@@ -95,7 +95,7 @@ export default function Home() {
                <h1 className="home-title xl:after:w-[300px] font-calibre text-[24px] xl:text-[32px] font-[600] text-third">
                   About me
                </h1>
-               <div className="flex xl:flex-row mt-[50px] flex-col-reverse">
+               <div className="flex xl:flex-row mt-[50px] flex-col-reverse justify-center items-center">
                   <div className="flex-1 xl:max-w-[550px] max-w-[600px]">
                      <p className="mt-[36px] xl:mt-0 xl:block font-calibre text-[21px] text-four mb-[15px] leading-[32px] text-left">
                         Hello! My full name is{' '}

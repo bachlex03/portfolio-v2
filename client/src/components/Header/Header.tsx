@@ -5,14 +5,8 @@ import Image from 'next/image';
 import Nav from '~/components/Nav/Nav';
 import MobileNav from '~/components/Nav/MobileNav';
 import { cn } from '~/lib/utils';
-import {
-   useMotionValue,
-   useMotionValueEvent,
-   useScroll,
-   useSpring,
-   motion,
-} from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { useState } from 'react';
 
 var classes = 'top';
 var lastScroll = 0;
@@ -22,21 +16,16 @@ export default function Header() {
    const [direction, setDirection] = useState<'up' | 'down' | 'top' | ''>('');
 
    useMotionValueEvent(scrollY, 'change', (latest) => {
-      console.log('latest', latest);
-
       if (latest > 0 && lastScroll < latest) {
          setDirection('down');
-         console.log('down');
       }
 
       if (latest > 0 && lastScroll > latest) {
          setDirection('up');
-         console.log('up');
       }
 
       if (latest === 0) {
          setDirection('top');
-         console.log('top');
       }
 
       lastScroll = latest;
