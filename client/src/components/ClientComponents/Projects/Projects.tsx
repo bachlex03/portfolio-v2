@@ -76,6 +76,8 @@ const projects = [
 const Projects = () => {
    const isOdd = (num: number) => num % 2 !== 0;
 
+   const handleSlideChange = () => {};
+
    return (
       <div className="w-full flex flex-col gap-14">
          {projects.map((project, index) => {
@@ -84,15 +86,16 @@ const Projects = () => {
             return (
                <div
                   key={index}
-                  className="flex odd:flex-row even:flex-row-reverse mt-[50px]"
+                  className="xl:flex odd:flex-row even:flex-row-reverse mt-[50px]"
                >
                   {/* Images */}
-                  <div className="w-[60%] group">
+                  <div className="w-[100%] xl:w-[60%] group">
                      <Swiper
-                        className="relative opacity-50 hover:opacity-100 hover:z-20 transition-all"
+                        className="relative xl:opacity-50 xl:hover:opacity-100 xl:hover:z-20 transition-all"
                         spaceBetween={30}
                         slidesPerView={1}
-                        onSlideChange={() => {
+                        onSlideChange={(event) => {
+                           setActiveIndex(event.activeIndex);
                            // videoRef.current?.pause();
                         }}
                      >
@@ -110,7 +113,7 @@ const Projects = () => {
                         {project.images.map((image, index) => {
                            return (
                               <SwiperSlide key={index}>
-                                 <div className="relative h-[360px]">
+                                 <div className="relative h-[360px] md:h-[580px] lg:h-[630px] xl:h-[360px]">
                                     <div className="relative w-full h-full hover:z-20">
                                        <Image
                                           src={image}
@@ -123,10 +126,12 @@ const Projects = () => {
                               </SwiperSlide>
                            );
                         })}
-                        <SwiperBtns setActiveIndex={setActiveIndex} />
+                        <div className="hidden xl:block">
+                           <SwiperBtns setActiveIndex={setActiveIndex} />
+                        </div>
                      </Swiper>
 
-                     <ul className="flex items-center justify-center gap-2 mt-3">
+                     <ul className="flex items-center justify-center gap-2 mt-5">
                         {project.images.map((num, index) => {
                            return (
                               <li
@@ -139,27 +144,31 @@ const Projects = () => {
                         })}
                      </ul>
                   </div>
-
+                  {/* isOdd(index)
+                           ? 'justify-start items-start'
+                           : 'justify-start items-end' */}
                   {/* Content */}
                   <div
-                     className={`flex flex-col ${
+                     className={cn(
+                        'flex flex-col items-center xl:w-[40%]',
                         isOdd(index)
-                           ? 'justify-start items-start'
-                           : 'justify-start items-end'
-                     } w-[40%]`}
+                           ? 'xl:justify-start xl:items-start'
+                           : 'xl:justify-start xl:items-end',
+                     )}
                   >
-                     <span className="text-secondary text-sm">
+                     <span className="hidden xl:block text-secondary text-sm">
                         Featured Project
                      </span>
-                     <h3 className="font-bold text-[28px] mt-1">
+                     <h3 className="text-center xl:text-left xl:block font-bold text-[28px] mt-5">
                         <Link href="#" target="_blank">
                            Halcyon Theme
                         </Link>
                      </h3>
                      <p
-                        className={`relative z-10 mt-5 min-w-[496px] bg-[#112240] p-[25px] rounded font-calibre text-third text-lg ${
-                           isOdd(index) ? 'text-left' : 'text-right'
-                        }`}
+                        className={cn(
+                           'xl:block text-center relative z-10 mt-3 max-w-[650px] xl:min-w-[496px] bg-[#112240] p-[25px] rounded font-calibre text-third text-lg',
+                           isOdd(index) ? 'xl:text-left' : 'xl:text-right',
+                        )}
                      >
                         A minimal, dark blue theme for VS Code, Sublime Text,
                         Atom, iTerm, and more. Available on Visual Studio
@@ -169,7 +178,7 @@ const Projects = () => {
                      <ul
                         className={cn(
                            SFmono.variable,
-                           'flex gap-4 font-SFmono text-sm text-third mt-5 flex-wrap',
+                           'flex xl:justify-start justify-center gap-4 font-SFmono text-sm text-third mt-5 flex-wrap',
                         )}
                      >
                         <li>HTML 5</li>
@@ -177,7 +186,7 @@ const Projects = () => {
                         <li>React.js</li>
                         <li>Next.js</li>
                      </ul>
-                     <div className="flex mt-5 text-third gap-5 text-xl">
+                     <div className="flex xl:justify-start justify-center mt-5 text-third gap-5 text-xl">
                         <FiGithub className="hover:text-secondary transition-all cursor-pointer" />
                         <FiExternalLink className="hover:text-secondary transition-all cursor-pointer" />
                      </div>
