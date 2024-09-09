@@ -9,14 +9,17 @@ import { cn } from '~/lib/utils';
 import Photo from '~/components/Photo/Photo';
 import HomeTabs from '~/components/Tab-content/HomeTabs';
 import Stats from '~/components/Stats/Stats';
+import Projects from '~/components/ClientComponents/Projects/Projects';
 
 export default function Home() {
    return (
       <>
          {/* Intro */}
-         <div className="hidden xl:block">
+         <div id="social-list" className="hidden xl:block">
             <AsideSocial />
          </div>
+
+         {/* Hero */}
          <section
             className={clsx(
                calibreFont.variable,
@@ -86,7 +89,7 @@ export default function Home() {
          {/* About */}
          <section
             id="about"
-            className={cn(calibreFont.variable, 'min-h-screen')}
+            className={cn(calibreFont.variable, 'min-h-screen xl:min-h-[90vh]')}
          >
             <div className="container mx-auto px-[36px]">
                <h1 className="home-title xl:after:w-[300px] font-calibre text-[24px] xl:text-[32px] font-[600] text-third">
@@ -165,13 +168,26 @@ export default function Home() {
          {/* Working */}
          <section
             id="working"
-            className={cn(calibreFont.variable, 'min-h-screen mt-20')}
+            className={cn(calibreFont.variable, 'h-[50vh] mt-20')}
          >
             <div className="container mx-auto xl:px-[150px]">
                <h1 className="home-title xl:after:w-[300px] font-calibre text-[24px] xl:text-[32px] font-[600] text-third">
                   Where i've Worked
                </h1>
                <HomeTabs />
+            </div>
+         </section>
+
+         {/* Projects */}
+         <section
+            id="project"
+            className={cn(calibreFont.variable, 'min-h-screen my-20')}
+         >
+            <div className="container mx-auto xl:px-6">
+               <h1 className="home-title xl:after:w-[300px] font-calibre text-[24px] xl:text-[32px] font-[600] text-third after:w-[190px]">
+                  Something I've Built
+               </h1>
+               <Projects />
             </div>
          </section>
       </>
