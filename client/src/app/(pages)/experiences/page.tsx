@@ -53,11 +53,6 @@ const about = [
       fieldValue: 'lxbachit03.working@gmail.com',
    },
    {
-      fieldName: 'Freelance',
-      fieldValue: 'Available',
-   },
-
-   {
       fieldName: 'Languages',
       fieldValue: 'English, Vietnamese',
    },
@@ -346,7 +341,7 @@ const Page = () => {
             )}
          >
             <div className="container flex mx-auto">
-               <div className="hidden sticky z-0 xl:flex flex-col justify-between flex-1 max-h-[calc(100vh-126px)] top-[7.85rem]">
+               <div className="hidden sticky z-0 md:flex flex-col justify-between flex-1 max-h-[calc(100vh-126px)] top-[7.85rem]">
                   <div>
                      <h1 className="text-6xl font-[700] font-calibre">
                         <a href="/">Le Xuan Bach</a>
@@ -391,7 +386,7 @@ const Page = () => {
                      </nav>
                   </div>
 
-                  <ul className="flex gap-5 text-[24px] group text-slate-300/80 -translate-x-28 pb-[80px]">
+                  <ul className="flex gap-5 text-[24px] group text-slate-300/80 pb-[80px] xl:translate-x-28">
                      <li className="hover:text-slate-200 transition-all">
                         <Link href="#">
                            <FaGithub />
@@ -422,17 +417,67 @@ const Page = () => {
 
                <div className="flex-1">
                   {/* About */}
-                  <section id="top" className="">
-                     <div className="flex flex-col items-center">
-                        <p className="text-3xl font-bold">About me</p>
-                        <p className="text-base text-center text-four font-[700] leading-6 py-5 ma">
-                           When I’m not at the computer, I’m usually rock
-                           climbing, reading, hanging out with my wife and two
-                           cats, or running around Hyrule searching for Korok
-                           seeds
+                  <section id="top" className="mb-[96px] h-screen md:h-auto">
+                     <div className="md:hidden mb-16">
+                        <h1 className="text-6xl font-[700] font-calibre">
+                           <a href="/">Le Xuan Bach</a>
+                        </h1>
+                        <span className="text-[20px] mt-3">
+                           Full-stack Engineer
+                        </span>
+                        <p className="text-[20px] mt-5 font-calibre text-third/70 w-[300px] leading-snug">
+                           I build pixel-perfect, engaging, and accessible
+                           digital experiences.
+                        </p>
+                        <ul className="xl:hidden flex gap-5 text-[22px] group text-slate-300/80 justify-start mt-5">
+                           <li className="hover:text-slate-200 transition-all">
+                              <Link href="#">
+                                 <FaGithub />
+                              </Link>
+                           </li>
+                           <li className="hover:text-slate-200 transition-all">
+                              <Link href="#">
+                                 <FaLinkedinIn />
+                              </Link>
+                           </li>
+                           <li className="hover:text-slate-200 transition-all">
+                              <Link href="#">
+                                 <FaFacebook />
+                              </Link>
+                           </li>
+                           <li className="hover:text-slate-200 transition-all">
+                              <Link href="#">
+                                 <FiInstagram />
+                              </Link>
+                           </li>
+                           <li className="hover:text-slate-200 transition-all">
+                              <Link href="#">
+                                 <FaTwitter />
+                              </Link>
+                           </li>
+                        </ul>
+                     </div>
+
+                     <div className="flex flex-col items-start">
+                        <p className="text-xl font-bold">About me</p>
+                        <p className="text-lg text-four font-[500] leading-normal py-5 font-calibre">
+                           My interest in web development started back in 2020
+                           when I decided to try creating something that make a
+                           valuable product for society. Fast-forward to today,
+                           I'm a dedicated student currently enrolled at the Ho
+                           Chi Minh City University of Technology and Education
+                           (HCMUTE). My academic journey at HCMUTE has been a
+                           remarkable experience filled with learning, growth,
+                           and exciting challenges. As I pursue my education in
+                           this esteemed institution, I am passionate about
+                           Information and Technology and continually strive to
+                           expand my knowledge and contribute to my field. I
+                           look forward to sharing my academic and personal
+                           experiences with you as I continue on this
+                           educational adventure at HCMUTE.
                         </p>
                      </div>
-                     <ul className="flex flex-col items-center">
+                     <ul className="flex flex-col items-start ">
                         {about.map((item, index) => (
                            <li
                               key={index}
@@ -446,12 +491,22 @@ const Page = () => {
                               </span>
                            </li>
                         ))}
+                        <li className="flex items-center justify-center gap-4 leading-10">
+                           <span className="text-four font-bold    text-[13px]">
+                              Freelance
+                           </span>
+                           <span className="text-[18px] text-secondary">
+                              Available
+                           </span>
+                        </li>
                      </ul>
                   </section>
 
                   {/* Experience */}
                   <section id="experience" className="pb-[96px]">
-                     <div className="pb-[96px]"></div>
+                     <h2 className="xl:hidden text-lg uppercase font-bold ml-5 py-10">
+                        Experience
+                     </h2>
                      {experiences.map((experience, index) => {
                         return (
                            <div
@@ -506,11 +561,14 @@ const Page = () => {
 
                   {/* Projects */}
                   <section id="projects" className="pb-[96px]">
+                     <h2 className="xl:hidden text-lg uppercase font-bold ml-5 py-10">
+                        Projects
+                     </h2>
                      {projects.map((project, index) => {
                         return (
                            <div
                               key={index}
-                              className="grid grid-cols-8 gap-4 p-5 group hover:bg-slate-800/50 rounded transition-all"
+                              className="flex flex-col-reverse sm:grid sm:grid-cols-8 gap-4 p-5 group hover:bg-slate-800/50 rounded transition-all"
                               ref={(el) => {
                                  ItemRefs.current.push(el);
                               }}
@@ -524,7 +582,7 @@ const Page = () => {
                               }}
                            >
                               {/* Image */}
-                              <div className="item col-span-2 w-[200px] h-[120px] xl:w-[110px] xl:h-[75px]">
+                              <div className="item col-span-2 w-[200px] md:w-auto h-[120px] xl:w-[110px] xl:h-[75px]">
                                  <div className="relative w-full h-full">
                                     <Image
                                        src={project.image}
@@ -566,7 +624,7 @@ const Page = () => {
                   </section>
 
                   <section id="end" className="pb-[96px]">
-                     <p className="w-[448px] font-calibre text-[17px] text-slate-200/40 leading-tight">
+                     <p className="w-[448px] font-calibre text-[15px] xl:text-[17px] text-slate-200/40 leading-tight">
                         Loosely designed in{' '}
                         <span className="text-slate-400 font-bold hover:text-secondary cursor-pointer transition-all">
                            Figma
