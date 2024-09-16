@@ -15,7 +15,6 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
@@ -34,9 +33,12 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
+
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
+
+RUN npm install pm2 -g && pm2 --version
 
 ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
@@ -65,4 +67,6 @@ ENV PORT=3000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
-CMD ["node", "server.js"]
+
+# using PM2 to run the server in production
+CMD ["pm2-runtime", "server.js"] 
